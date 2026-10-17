@@ -4,4 +4,33 @@
              x:Class="ShopApp.Views.HelpSupportDetailPage"
              Title="HelpSupportDetailPage">
 
+    <Grid ColumnDefinitions="*,*">
+        <VerticalStackLayout>
+            <Picker />
+
+            <HorizontalStackLayout VerticalOptions="Center">
+                <Stepper
+                Minimum="1"
+                Maximum="100"
+                Increment="1"
+                x:Name="cantidad"
+                />
+                <Label 
+                VerticalOptions="Center"
+                Margin="4"
+                Text="{Binding Value, Source={x:Reference Name=cantidad}}"
+                />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Column="1">
+            <Label Text="Nombre" />
+            <Label/>
+            <Label Text="Descripcion"/>
+            <Label/>
+            <Label Text="Precio"/>
+            <Label/>
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>
