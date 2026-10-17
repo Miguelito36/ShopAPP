@@ -3,7 +3,7 @@
 
 namespace ShopApp.DataAcces
 {
-    public class ShopAppDbContext : DbContext
+    public class ShopDbContext : DbContext
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
