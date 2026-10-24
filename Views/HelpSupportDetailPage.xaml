@@ -2,18 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ShopApp.Views.HelpSupportDetailPage"
+             xmlns:views="clr-namespace:ShopApp.Views"
              Title="HelpSupportDetailPage">
 
-    <Grid ColumnDefinitions="*,*">
+    <ContentPage.BindingContext>
+        <views:HelpSupportDetailPage></views:HelpSupportDetailPage>
+    </ContentPage.BindingContext>
+
+<Grid ColumnDefinitions="*,*">
         <VerticalStackLayout>
-            <Picker />
+            <Picker ItemsSource="{Binding Products}"
+                    SelectedItem="{Binding ProductoSeleccionado, Mode=TwoWay}"
+                    />
 
             <HorizontalStackLayout VerticalOptions="Center">
                 <Stepper
-                Minimum="1"
-                Maximum="100"
-                Increment="1"
-                x:Name="cantidad"
+                    Minimum="1"
+                    Maximum="100"
+                    Increment="1"
+                    x:Name="cantidad"
+                    Value="{Binding Cantidad, Mode=TwoWay}"
                 />
                 <Label 
                 VerticalOptions="Center"
@@ -25,11 +33,11 @@
 
         <VerticalStackLayout Grid.Column="1">
             <Label Text="Nombre" />
-            <Label/>
+            <Label Text="{Binding ProductoSeleccionado.Nombre}"/>
             <Label Text="Descripcion"/>
-            <Label/>
+            <Label Text="{Binding ProductoSeleccionado.Descripcion}"/>
             <Label Text="Precio"/>
-            <Label/>
+            <Label Text="{Binding ProductoSeleccionado.Precio, StringFormat='${0:C}'}"/>
         </VerticalStackLayout>
     </Grid>
 
