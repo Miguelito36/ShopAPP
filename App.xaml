@@ -3,9 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ShopApp"
              xmlns:data="clr-namespace:ShopApp.DataAcces"
+             xmlns:converters="clr-namespace:ShopApp.Converters"
              x:Class="ShopApp.App">
     <Application.Resources>
         <ResourceDictionary>
+            
+            <converters:PrecioParaColorConverter x:Key="PrecioParaColorConverter"/>
             
             <DataTemplate x:Key="ProductDataTemplate" x:DataType="data:Product">
                 <Grid ColumnDefinitions="*, Auto" Padding="4" HeightRequest="88">
@@ -19,6 +22,7 @@
                            FontAttributes="Bold"
                            FontAutoScalingEnabled="True"
                            Text="{Binding Precio, StringFormat='${0:C}'}"
+                           TextColor="{Binding Precio, Converter={StaticResource PrecioParaColorConverter}}"
                            />
                 </Grid>
             </DataTemplate>

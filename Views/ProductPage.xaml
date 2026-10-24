@@ -10,6 +10,7 @@
             Placeholder="Buscar Producto"
             DisplayMemberName="Nombre"
             ShowsResults="True"
+            ItemTemplate="{StaticResource ProductDataTemplate}"
         />
     </Shell.SearchHandler>
     
