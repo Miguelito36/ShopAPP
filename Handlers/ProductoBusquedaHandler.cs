@@ -8,11 +8,11 @@ namespace ShopApp.Handlers
 {
     public class ProductoBusquedaHandler : SearchHandler
     {
-        ShopAppDbContext dbContext;
+        ShopDbContext dbContext;
 
         public ProductoBusquedaHandler()
         {
-            this.dbContext = new ShopAppDbContext();
+            this.dbContext = new ShopDbContext();
         }
 
         protected override void OnQueryChanged(string oldValue, string newValue)
@@ -25,7 +25,8 @@ namespace ShopApp.Handlers
 
             var resultados = dbContext.Products
                 .Where(p => p.Nombre.ToLowerInvariant()
-                .Contains(newValue.ToLowerInvariant()));
+                .Contains(newValue.ToLowerInvariant()))
+                .ToList();
 
             ItemsSource = resultados;
         }

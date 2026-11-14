@@ -8,7 +8,7 @@ public partial class ClientPage : ContentPage
 	{
 		InitializeComponent();
 
-        var dbContext = new ShopAppDbContext();
+        var dbContext = new ShopDbContext();
 
         foreach (var client in dbContext.Clients)
         {

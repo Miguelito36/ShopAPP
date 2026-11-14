@@ -8,13 +8,17 @@
     <Shell.SearchHandler>
         <handlers:ProductoBusquedaHandler
             Placeholder="Buscar Producto"
-            DisplayMemberName="Nombre"
             ShowsResults="True"
             ItemTemplate="{StaticResource ProductDataTemplate}"
         />
     </Shell.SearchHandler>
-    
-    <VerticalStackLayout x:Name="container">
-        
-    </VerticalStackLayout>
+
+    <RefreshView Command="{Binding RefreshProductsCommand}"  IsRefreshing="{Binding IsRefreshing}">
+        <CollectionView 
+        SelectionMode="Single"
+        ItemsSource="{Binding Products}"
+        SelectedItem="{Binding ProductSelected, Mode=TwoWay}"
+        ItemTemplate="{StaticResource ProductDataTemplate}"
+        />
+    </RefreshView>
 </ContentPage>

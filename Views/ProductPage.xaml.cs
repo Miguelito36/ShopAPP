@@ -9,7 +9,7 @@ public partial class ProductPage : ContentPage
 	{
 		InitializeComponent();
 
-		var dbContext = new ShopAppDbContext(); 
+		var dbContext = new ShopDbContext(); 
 
 		foreach (var product in dbContext.Products)
 		{

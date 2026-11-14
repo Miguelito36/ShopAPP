@@ -8,7 +8,7 @@ public partial class CategoriesPage : ContentPage
 	{
 		InitializeComponent();
 
-        var dbContext = new ShopAppDbContext();
+        var dbContext = new ShopDbContext();
 
         foreach (var category in dbContext.Categories)
         {

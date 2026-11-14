@@ -9,7 +9,7 @@ namespace ShopApp.Views
         {
             InitializeComponent();
 
-            var dbContext = new ShopAppDbContext();
+            var dbContext = new ShopDbContext();
 
             // ==========================================
             // CANTIDAD DE REGISTROS

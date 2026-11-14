@@ -15,7 +15,7 @@ public partial class ProductDetailPage : ContentPage, IQueryAttributable
     {
         if (query.TryGetValue("id", out var idObj) && idObj is string idStr && int.TryParse(idStr, out var id))
         {
-            var dbContext = new ShopAppDbContext();
+            var dbContext = new ShopDbContext();
             var product = dbContext.Products.FirstOrDefault(x => x.Id == id);
             if (product != null)
             {

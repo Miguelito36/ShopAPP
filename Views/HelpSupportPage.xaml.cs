@@ -23,7 +23,7 @@ public class HelpSupportData : BindingUtilObject
     //public int VisitasPendientes { get; set; }
     public HelpSupportData()
     {
-        var database = new ShopAppDbContext();
+        var database = new ShopDbContext();
         Clients = new ObservableCollection<Client>(database.Clients);
         PropertyChanged += HelpSupportData_PropertyChanged;
     }

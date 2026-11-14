@@ -18,7 +18,7 @@ namespace ShopApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            var dbContext = new ShopAppDbContext();
+            var dbContext = new ShopDbContext();
             dbContext.Database.EnsureCreated();
             dbContext.Dispose();
 

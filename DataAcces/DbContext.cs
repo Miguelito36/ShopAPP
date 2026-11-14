@@ -53,4 +53,9 @@ namespace ShopApp.DataAcces
 
     public record Client(int Id, string Nombre, string Direccion);
 
+    // Alias para compatibilidad de nombres
+    public class ShopAppDbContext : ShopDbContext
+    {
+    }
+
 }
