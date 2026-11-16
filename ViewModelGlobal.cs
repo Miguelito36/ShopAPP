@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.ComponentModel;
-using System.Text;
 using System.Runtime.CompilerServices;
 
-namespace ShopApp
+namespace ShopApp2
 {
-    public class BindingUtilObject : INotifyPropertyChanged
+    public class ViewModelGlobal : ObservableObject
     {
         public void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
+
+
+
 }

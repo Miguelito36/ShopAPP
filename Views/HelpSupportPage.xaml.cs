@@ -18,7 +18,7 @@ public partial class HelpSupportPage : ContentPage
     }
 }
 
-public class HelpSupportData : BindingUtilObject       
+public class HelpSupportData : ViewModelGlobal       
 {
     //public int VisitasPendientes { get; set; }
     public HelpSupportData()
