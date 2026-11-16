@@ -7,6 +7,28 @@ namespace ShopApp.ViewModels;
 
 public class HelpSupportDetailViewModel : ViewModelGlobal, IQueryAttributable
 {
+    private readonly IConnectivity _connectivity;
+    public HelpSupportDetailViewModel(IConnectivity connectivity)
+    {
+        var database = new ShopDbContext();
+        Products = new ObservableCollection<Product>(database.Products);
+        AddCommand = new MiComando(() =>
+        {
+            var compra = new Compra(
+                ClienteId,
+                productoseleccionado.Id,
+                cantidad,
+                productoseleccionado.Nombre,
+                productoseleccionado.Precio,
+                productoseleccionado.Precio * cantidad
+            );
+            Compras.Add(compra);
+        },
+        () => true);
+
+        _connectivity = connectivity;
+        _connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+    }
     private ObservableCollection<Product> _products = new();
     private Product _productoseleccionado;
     private int _cantidad = 1;
