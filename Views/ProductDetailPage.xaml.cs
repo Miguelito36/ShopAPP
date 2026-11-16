@@ -20,7 +20,7 @@ public partial class ProductDetailPage : ContentPage, IQueryAttributable
             if (product != null)
             {
                 container.Children.Add(new Label { Text = product.Nombre });
-                container.Children.Add(new Label { Text = product.Descripcion });
+                container.Children.Add(new Label { Text = product.Description });
                 container.Children.Add(new Label { Text = product.Precio.ToString() });
             }
         }

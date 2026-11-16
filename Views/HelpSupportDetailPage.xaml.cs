@@ -1,6 +1,6 @@
 
 using ShopApp.DataAcces;
-using ShopApp2;
+using ShopApp;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 

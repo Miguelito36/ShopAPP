@@ -1,10 +1,9 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace ShopApp2
+namespace ShopApp
 {
-    public class ViewModelGlobal : ObservableObject
+    public class ViewModelGlobal : INotifyPropertyChanged
     {
         public void RaisePropertyChanged([CallerMemberName] string propertyName = null)
         {
